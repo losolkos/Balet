@@ -43,20 +43,27 @@
     </form>
 <?php
 if(isset($_POST['godziny'])){
-    $godzinyGrupaA = isset($_POST['grupaA']) ? $_POST['grupaA'] : 0;
-    $godzinyGrupaB = isset($_POST['grupaB']) ? $_POST['grupaB'] : 0;
-    $godzinyGrupaC = isset($_POST['grupaC']) ? $_POST['grupaC'] : 0;
-    $godzinyGrupaD = isset($_POST['grupaD']) ? $_POST['grupaD'] : 0;
-    $godzinyGrupaE = isset($_POST['grupaE']) ? $_POST['grupaE'] : 0;
-    $godzinyGrupaF = isset($_POST['grupaF']) ? $_POST['grupaF'] : 0;
-    $godzinyGrupaG = isset($_POST['grupaG']) ? $_POST['grupaG'] : 0;
-    $godzinyGrupaH = isset($_POST['grupaH']) ? $_POST['grupaH'] : 0;
-    $godzinyGrupaI = isset($_POST['grupaI']) ? $_POST['grupaI'] : 0;
-    $godzinyGrupaJ = isset($_POST['grupaJ']) ? $_POST['grupaJ'] : 0;
-    echo "Godziny dla Grupy A: $godzinyGrupaA <br>";
-    echo "Godziny dla Grupy B: $godzinyGrupaB <br>";
-    echo "Godziny dla Grupy C: $godzinyGrupaC <br>";
-
+    if(isset($_POST['godziny'])){
+        $godzinyGrupaA = isset($_POST['grupaA']) ? $_POST['grupaA'] : 0;
+        $godzinyGrupaB = isset($_POST['grupaB']) ? $_POST['grupaB'] : 0;
+        $godzinyGrupaC = isset($_POST['grupaC']) ? $_POST['grupaC'] : 0;
+        $godzinyGrupaD = isset($_POST['grupaD']) ? $_POST['grupaD'] : 0;
+        $godzinyGrupaE = isset($_POST['grupaE']) ? $_POST['grupaE'] : 0;
+        $godzinyGrupaF = isset($_POST['grupaF']) ? $_POST['grupaF'] : 0;
+        $godzinyGrupaG = isset($_POST['grupaG']) ? $_POST['grupaG'] : 0;
+        $godzinyGrupaH = isset($_POST['grupaH']) ? $_POST['grupaH'] : 0;
+        $godzinyGrupaI = isset($_POST['grupaI']) ? $_POST['grupaI'] : 0;
+        $godzinyGrupaJ = isset($_POST['grupaJ']) ? $_POST['grupaJ'] : 0;
+        $godzinysal = 10;
+        $czas = 7;
+        $czasogólny = $godzinyGrupaA + $godzinyGrupaB +$godzinyGrupaC + $godzinyGrupaD + $godzinyGrupaE + $godzinyGrupaF + $godzinyGrupaG + $godzinyGrupaH + $godzinyGrupaI + $godzinyGrupaJ; 
+        $i = 0;
+        do {
+            $i++;
+            $czasogólny -= $godzinysal;
+        } while ($godzinyGrupaA > 0);
+        echo "trzeba wynająć" , $i, "sale <br>";
+    }
 }
 ?>
 </body>
